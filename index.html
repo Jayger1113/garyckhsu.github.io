@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Welcome to my page</title>
-  </head>
-  <body>
-    <script type="text/JavaScript">
-      　document.write("歡迎光臨")
-      　</script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Welcome to my page</title>
+</head>
+
+<body>
+  <script type="text/JavaScript">
+    function reqListener () {
+    console.log(this.responseText);
+      document.write(this.responseText)
+    }
+
+var req = new XMLHttpRequest();
+req.addEventListener("load", reqListener);
+req.open("GET", "https://translate.google.com.tw/?hl=zh-TW#en/zh-TW/delight");
+req.send();
+    </script>
+</body>
+
 </html>
